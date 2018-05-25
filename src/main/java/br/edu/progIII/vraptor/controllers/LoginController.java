@@ -19,28 +19,33 @@ import javax.inject.Inject;
  */
 @Controller
 public class LoginController {
-    
+
     @Inject
     private UserSession userSession;
     @Inject
     private Result result;
-    
-    @Get("login")
-    public void getLoginView(){
-                
+
+    @Get("pc")
+    public void index(){
+        
     }
     
+    @Get("login")
+    public void loginView() {
+        System.out.println("entrou");
+    }
+   
     @Post("autenticar")
-    public void authenticate(User user){
-        System.out.println("LoginController "  + user);
-       if (userSession.getUsers().get(0).equals(user)){
-          userSession.addUser(user);
-          result.redirectTo(UserController.class).registerView();
-       }else{
-           //Mandar de volta para view de login
-           //Como mensagem de erro. 
-          result.include("msgLoginError", "Usuário ou senha inválidos!");
-          result.redirectTo(this).getLoginView();
-       }
+    public void authenticate(User user) {
+        System.out.println("LoginController " + user.getName());
+        if (userSession.getUsers().get(0).equals(user)) {
+            userSession.addUser(user);
+            result.redirectTo(this).loginView();
+        } else {
+            //Mandar de volta para view de login
+            //Como mensagem de erro. 
+            result.include("msgLoginError", "Usuário ou senha inválidos!");
+            result.redirectTo(this).loginView();
+        }
     }
 }

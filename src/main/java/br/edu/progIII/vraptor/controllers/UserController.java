@@ -31,6 +31,10 @@ public class UserController {
     @Inject
     private UserSession userSession;
 
+    @Get("list")
+    public void list(){
+    
+    }
     //usuario/novo
     @Get("novo")
     public void registerView() {

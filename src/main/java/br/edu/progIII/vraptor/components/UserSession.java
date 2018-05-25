@@ -5,6 +5,7 @@
  */
 package br.edu.progIII.vraptor.components;
 
+import br.edu.progIII.vraptor.controllers.LoginController;
 import br.edu.progIII.vraptor.model.User;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -23,18 +24,17 @@ import javax.inject.Named;
 public class UserSession implements Serializable{
     
     private List<User> users  = new ArrayList<>();
-
+    
     public UserSession() {
-       users.add(new User("João", "123"));
+       users.add(new User("1", "1"));
        System.out.println("Init User Session " + users);
     }
     
-  
     public void addUser(User user){
        users.add(user);
     }
 
-    public List<User> getUsers() {
+     public List<User> getUsers() {
         return users;
     }
 
