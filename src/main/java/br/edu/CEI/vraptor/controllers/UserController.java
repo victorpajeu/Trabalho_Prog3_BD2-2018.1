@@ -3,20 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.progIII.vraptor.controllers;
+package br.edu.CEI.vraptor.controllers;
 
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
-import br.edu.progIII.vraptor.components.UserSession;
-import br.edu.progIII.vraptor.model.User;
+import br.edu.CEI.vraptor.components.UserSession;
+import br.edu.CEI.vraptor.model.User;
+
 import javax.inject.Inject;
 
 /**
  *
- * @author leonardo
+ * @author Victor Pajeú
  */
 @Controller
 @Path("usuario")//Define um caminho (inicial - prefixo) para todas as ações do controller
@@ -40,11 +41,15 @@ public class UserController {
     public void registerView() {
 
     }
+    @Get("buscar")
+    public void find(){
+        
+    }
 
     //usuario/salvar
     @Post("salvar")
     public void save(User user) {
-        userSession.addUser(user);
+       // UserRepositorio.salvar(user);
         /*
         Redireciona (SendRedirect) para uma rota do próprio (this) 
         controller. No caso, a rota é registerView

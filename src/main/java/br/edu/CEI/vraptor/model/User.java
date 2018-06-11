@@ -3,18 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.progIII.vraptor.model;
+package br.edu.CEI.vraptor.model;
 
 /**
  *
- * @author leonardo
+ * @author Victor Pajeú
  */
 public class User {
 
     private String name;
     private String password;
+    private boolean sudo;
 
     public User() {
+    }
+
+    public boolean getSudo() {
+        return sudo;
+    }
+
+    public void setSudo(boolean sudo) {
+        this.sudo = sudo;
     }
 
     public User(String name, String password) {
@@ -38,7 +47,7 @@ public class User {
         this.password = password;
     }
 
-    @Override
+    /*@Override
     public boolean equals(Object obj) {
         User objUser = (User) obj;
         boolean result = false;
@@ -47,5 +56,5 @@ public class User {
             result = true;
         }
         return result;
-    }
+    }*/
 }

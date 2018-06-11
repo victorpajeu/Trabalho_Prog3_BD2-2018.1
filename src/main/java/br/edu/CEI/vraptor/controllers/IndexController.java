@@ -3,21 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.progIII.vraptor.controllers;
+package br.edu.CEI.vraptor.controllers;
 
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
+import br.edu.CEI.vraptor.annotations.Private;
 
 /**
  *
- * @author leonardo
+ * @author Victor Pajeú
  */
 @Controller
+@Private
 public class IndexController {
     
     @Get("/")
     public void index(){
-        System.out.println("Requisição chegou!");
+        
+    }
+    
+    
+    @Get("editar")
+    public void editUser(){
+        
     }
     
 }
