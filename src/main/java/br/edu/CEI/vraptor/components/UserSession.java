@@ -6,12 +6,12 @@
 package br.edu.CEI.vraptor.components;
 
 
-import br.edu.CEI.vraptor.model.User;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
+import br.edu.CEI.vraptor.model.employee.Employee;
 
 /**
  *
@@ -23,8 +23,8 @@ import javax.inject.Named;
 //Serializable  -> Guarda o estado do objeto em memória
 public class UserSession implements Serializable{
     
-    private List<User> users  = new ArrayList<>();
-    private User userLogged;
+    private List<Employee> users  = new ArrayList<>();
+    private Employee userLogged;
     
     //Criação do primeiro Usuário para entrar na aplicação.////////////////////
     public UserSession() {
@@ -35,7 +35,7 @@ public class UserSession implements Serializable{
     
     
     //Primeiro passo depois de logado (ELE ADD O USUÁRIO A SESSÃO)///////////////
-    public void setUserLogged(User userLogged) {
+    public void setUserLogged(Employee userLogged) {
         this.userLogged = userLogged;
     }
     /////////////////////////////////////////////////////////////////////////////
@@ -48,17 +48,17 @@ public class UserSession implements Serializable{
      public void logout(){
         userLogged = null;
      }
-    public User getUserLogged() {
+    public Employee getUserLogged() {
         return userLogged;
     }
     
     
     
-    public void addUser(User user){
+    public void addUser(Employee user){
        users.add(user);
     }
 
-    public List<User> getUsers() {
+    public List<Employee> getUsers() {
         return users;
     }
 

@@ -11,7 +11,6 @@ import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import br.edu.CEI.vraptor.components.UserSession;
-import br.edu.CEI.vraptor.model.User;
 
 import javax.inject.Inject;
 
@@ -32,34 +31,18 @@ public class UserController {
     @Inject
     private UserSession userSession;
 
-    @Get("list")
-    public void list(){
-    
-    }
-    //usuario/novo
-    @Get("novo")
-    public void registerView() {
-
-    }
+    // -------------------      Buscando Usuario  ----------------------------------
     @Get("buscar")
-    public void find(){
+    public void findUser() {
         
     }
+//----------------------------------  Salvando usuario ---------------------------------------------  
+    
 
-    //usuario/salvar
-    @Post("salvar")
-    public void save(User user) {
-       // UserRepositorio.salvar(user);
-        /*
-        Redireciona (SendRedirect) para uma rota do próprio (this) 
-        controller. No caso, a rota é registerView
-         */
-        result.redirectTo(this).registerView();
-    }
-
-    @Get("apagar")
+   
+   @Get("apagar")
     public void delete() {
         userSession.deleteAll();
-        result.redirectTo(this).registerView();
+       // AQUIIIIIIIII TAmbemresult.redirectTo(this).registerView();
     }
 }
